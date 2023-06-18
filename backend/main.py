@@ -47,11 +47,6 @@ with open('input.txt', 'r') as file:
                         break
 
 
-print("\nPredicted:")
-print(predicted)
-
-
-
 from sklearn.metrics import precision_score, recall_score, f1_score
 
 ground_truth = []
@@ -63,9 +58,6 @@ with open("test.txt", 'r') as file:
     # Splitting the input text by whitespace and removing empty tokens
     ground_truth = input_text.split()
     ground_truth = [token.lower() for token in ground_truth]
-
-print("Ground truth: ")
-print(ground_truth)
 
 
 aligned_predicted = []
@@ -87,7 +79,8 @@ precision = precision_score(ground_truth, aligned_predicted, average='weighted')
 recall = recall_score(ground_truth, aligned_predicted, average='weighted')
 f1 = f1_score(ground_truth, aligned_predicted, average='weighted')
 
-print("Precision score:", precision)
+print("\nPrecision score:", precision)
 print("Recall score:", recall)
 print("F1 Score:", f1)
 
+print("\n\n\n\n")
