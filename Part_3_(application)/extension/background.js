@@ -4,7 +4,7 @@ chrome.action.onClicked.addListener(buttonClicked);
 
 function buttonClicked(tab){
     let msg = {
-        txt:"hello!"
+        txt:"Entity Extraction code is active!"
     }
     
     chrome.tabs.sendMessage(tab.id, msg)

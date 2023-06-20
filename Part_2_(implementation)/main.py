@@ -2,6 +2,10 @@ import nltk
 #nltk.download('words')
 from nltk.corpus import words
 setofwords = set(words.words())
+with open('output.txt', 'w') as file:
+    for word in setofwords:
+        file.write(word + '|')
+
 #print(f"Words in this dictionary: {len(setofwords)}")
 
 import re
@@ -12,7 +16,6 @@ warnings.filterwarnings('ignore')  # "error", "ignore", "always", "default", "mo
 predicted = []
 dictionary_words = []
 
-#ADD IN SOMETHING WITH FIRST CAPTIAL LETTER?
 with open('input.txt', 'r') as file:
     content = file.read()
 
